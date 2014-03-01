@@ -163,9 +163,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // cciudades_buscar
-        if ($pathinfo === '/buscar') {
-            return array (  '_controller' => 'c\\ciudadesBundle\\Controller\\DefaultController::buscarAction',  '_route' => 'cciudades_buscar',);
+        if (0 === strpos($pathinfo, '/s')) {
+            // cciudades_search
+            if ($pathinfo === '/search') {
+                return array (  '_controller' => 'c\\ciudadesBundle\\Controller\\DefaultController::searchAction',  '_route' => 'cciudades_search',);
+            }
+
+            // cciudades_recibirformulario
+            if ($pathinfo === '/show') {
+                return array (  '_controller' => 'c\\ciudadesBundle\\Controller\\DefaultController::resultAction',  '_route' => 'cciudades_recibirformulario',);
+            }
+
         }
 
         // _welcome

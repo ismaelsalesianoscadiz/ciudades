@@ -10,6 +10,10 @@ cciudades_countries:
 cciudades_pais:
     pattern:  /country/{co}/{inicial}
     defaults: { _controller: cciudadesBundle:Default:pais }
-cciudades_buscar:
-    pattern:  /buscar
-    defaults: { _controller: cciudadesBundle:Default:buscar }
+cciudades_search:
+    pattern:  /search
+    defaults: { _controller: cciudadesBundle:Default:search }
+    
+cciudades_recibirformulario:
+    pattern:  /show
+    defaults: { _controller: cciudadesBundle:Default:result }

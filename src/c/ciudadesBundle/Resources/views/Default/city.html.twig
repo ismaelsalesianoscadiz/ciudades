@@ -1,5 +1,5 @@
 {% extends 'cciudadesBundle:Default:base2.html.twig' %}
-
+    
 
    {% block meta %}
 
@@ -34,15 +34,22 @@
      
           <br>
           </h2>
+
        Latitude:
        {{  city.getLatitude() }}
              <br>
              Longitude:
       {{  city.getLongitude() }}
-    
+
           
         <br>
-   
+    
+{% set a= "http://maps.googleapis.com/maps/api/staticmap?center="~city.getLatitude()~","~city.getLongitude()~"&zoom=11&size=400x300&sensor=false" %}
+<img src={{ a }} >
+
+     
+    
+ 
         <br>
    
                   
@@ -50,7 +57,7 @@
                   
                   
            
-      
+      {#
  
         
         {% set c="http://ojw.dev.openstreetmap.org/StaticMap/?
@@ -62,7 +69,28 @@
 <img src="{{ c }}"     
    width="480" height="300" alt="OpenStreetMap" />
      
-     
+     #}
+        
+         {% set f="http://www.openstreetmap.org/?lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&zoom=12&layers=B000FTFTT&mlat=14.60921&mlon=121.14232"%}
+  {#
+
+
+"http://ojw.dev.openstreetmap.org/StaticMap/?
+   lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&z=9&
+   w=480&h=300&mode=Export&show=1" %}
+#}
+        
+        <a target="_blank" href={{ f }} 
+            
+            >View  Map</a> 
+        
+        
+        <br>
+  
+ 
+       <object type="text/html" data={{ f }} width="480" height="300" ></object> 
+        
+        
    {% set d="http://ojw.dev.openstreetmap.org/StaticMap/?
    lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&z=9&
    w=480&h=300&mode=Export&show=1" %}
@@ -73,7 +101,7 @@
    width="480" height="300" alt="OpenStreetMap" />
 
   <br>
-  
+  {#
   {% set e="http://ojw.dev.openstreetmap.org/StaticMap/?
    lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&z=12&
    w=480&h=300&mode=Export&show=1" %}
@@ -83,7 +111,12 @@
 <img src="{{ e }}"     
    width="480" height="300" alt="OpenStreetMap" />
 
+ 
+
+"http://www.openstreetmap.org/?lat=12.1&lon=123.01&zoom=5&layers=B000FTFTT&mlat=14.60921&mlon=121.14232"
+ #}
   
+   
   
            <a href="{{
    path(
