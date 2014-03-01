@@ -1,0 +1,4 @@
+cciudades:
+    resource: "@cciudadesBundle/Resources/config/routing.yml"
+    prefix:   /
+

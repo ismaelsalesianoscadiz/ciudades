@@ -1,0 +1,40 @@
+{% extends 'cciudadesBundle:Default:base2.html.twig' %}
+
+
+   {% block meta %}
+
+
+    <meta name="description" content="'Coordinates'">
+
+
+
+    <meta name="keywords" content="'Coordinates'">
+
+{% endblock %}
+
+
+
+
+
+{% block title 'search city coordinates' %}
+
+  {% block content %}
+
+ 
+  <form action="{{ path('cciudades_countries') }}" method="post" {{ form_enctype(form) }}>
+			{{ form_widget(form) }}
+			<input type="submit" />
+			</form>
+        
+  
+        
+
+
+    
+    
+    
+    
+    
+
+
+{% endblock %}

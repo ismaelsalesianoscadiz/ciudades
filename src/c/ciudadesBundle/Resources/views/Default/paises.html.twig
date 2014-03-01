@@ -1,0 +1,54 @@
+{% extends 'cciudadesBundle:Default:base2.html.twig' %}
+
+
+   {% block meta %}
+
+
+    <meta name="description" content="countries,cities, city, world">
+
+    <meta name="keywords" content="countries,cities, city, world">
+
+{% endblock %}
+
+
+{% block title  "Countries"%}
+  {% block content %}
+  
+
+
+{% for key, value in paises %} 
+
+    
+    <a href="{{path(
+      'cciudades_pais',
+     {'co': key,'inicial':'A'   }
+   )}}"> <br>
+  {{ value }} 
+</a>
+    
+     
+    
+  
+{% endfor %} 
+    
+    {#
+{% for key,value in array_path %}
+    Key : {{ key }}
+    Value : {{ value }}
+{% endfor %}
+#}
+    
+    <br>
+      <br>
+           <a href="{{
+   path(
+      'cciudades_city',
+     { 'id': 1 }
+
+   )
+  }}">
+  First city -> 
+</a>
+
+
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends 'cciudadesBundle:Default:base2.html.twig' %}
+
+
+   {% block meta %}
+
+
+    <meta name="description" content="{{ city.getCiudad()}}.'Coordinates'">
+
+
+
+    <meta name="keywords" content="{{ city.getCiudad()}}.'Coordinates'">
+
+{% endblock %}
+
+
+
+
+
+{% block title city.getCiudad() %}
+
+  {% block content %}
+
+ 
+    
+<h1>
+      CITY:  <strong>{{  city.getCiudad() }}</strong>
+</h1>
+       
+       
+       <h2>
+            Country: 
+           <strong>  {{  city.getCountryLong() }} </strong>
+                                 
+     
+          <br>
+          </h2>
+       Latitude:
+       {{  city.getLatitude() }}
+             <br>
+             Longitude:
+      {{  city.getLongitude() }}
+    
+          
+        <br>
+   
+        <br>
+   
+                  
+                  
+                  
+                  
+           
+      
+ 
+        
+        {% set c="http://ojw.dev.openstreetmap.org/StaticMap/?
+   lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&z=6&
+   w=480&h=300&mode=Export&show=1" %}
+       
+
+        
+<img src="{{ c }}"     
+   width="480" height="300" alt="OpenStreetMap" />
+     
+     
+   {% set d="http://ojw.dev.openstreetmap.org/StaticMap/?
+   lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&z=9&
+   w=480&h=300&mode=Export&show=1" %}
+       
+ 
+        
+<img src="{{ d }}"     
+   width="480" height="300" alt="OpenStreetMap" />
+
+  <br>
+  
+  {% set e="http://ojw.dev.openstreetmap.org/StaticMap/?
+   lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&z=12&
+   w=480&h=300&mode=Export&show=1" %}
+       
+
+        
+<img src="{{ e }}"     
+   width="480" height="300" alt="OpenStreetMap" />
+
+  
+  
+           <a href="{{
+   path(
+      'cciudades_city',
+     { 'id': city.getCp()+1 }
+   )
+  }}">
+  Next city -> 
+</a>
+
+
+    
+    
+    
+    
+    
+
+
+{% endblock %}

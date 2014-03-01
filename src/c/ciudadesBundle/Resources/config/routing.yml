@@ -1,0 +1,15 @@
+cciudades_homepage:
+    pattern:  /
+    defaults: { _controller: cciudadesBundle:Default:home }
+cciudades_city:
+    pattern:  /city/{id}
+    defaults: { _controller: cciudadesBundle:Default:city }
+cciudades_countries:
+    pattern:  /countries
+    defaults: { _controller: cciudadesBundle:Default:paises }
+cciudades_pais:
+    pattern:  /country/{co}/{inicial}
+    defaults: { _controller: cciudadesBundle:Default:pais }
+cciudades_buscar:
+    pattern:  /buscar
+    defaults: { _controller: cciudadesBundle:Default:buscar }

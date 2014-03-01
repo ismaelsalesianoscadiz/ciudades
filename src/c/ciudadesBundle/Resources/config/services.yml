@@ -1,0 +1,7 @@
+parameters:
+#    cciudades.example.class: c\ciudadesBundle\Example
+
+services:
+#    cciudades.example:
+#        class: %cciudades.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

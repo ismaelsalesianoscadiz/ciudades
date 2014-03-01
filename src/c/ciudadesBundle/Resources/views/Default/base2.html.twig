@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+{% block title "Cities of the world , latitude, Longitude"  %}
+ <!-- <title>Cities of the world</title> -->
+
+ 
+ {% block meta %}
+
+    <meta name="description" content="">
+
+
+
+    <meta name="keywords" content="">
+
+{% endblock %}
+ 
+ {#
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="Cities, City, Cities of the world ,latitude,longitude" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <!-- <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />-->
+#}
+  <link href="{{ asset('bundles/cciudades/css/style.css') }}" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+    
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href={{ path('cciudades_homepage') }}>Home</a></li>
+          <li><a href= {{ path('cciudades_countries') }} >Countries</a></li>         
+          <li><a href= {{ path('cciudades_buscar') }} >Search</a></li>  
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+      <div class="sidebar">
+        <!-- insert your sidebar items here -->
+      
+        <h4>Links</h4>
+        
+        <ul>
+          <li><a href="#">link 1</a></li>
+          <li><a href="#">link 2</a></li>
+          <li><a href="#">link 3</a></li>
+          <li><a href="#">link 4</a></li>
+        </ul>
+        <h3>Search</h3>
+        <form method="post" action="#" id="search_form">
+          <p>
+            <input class="search" type="text" name="search_field" value="Enter city name....." />
+            <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="{{ asset('bundles/cciudades/css/search.png') }}" alt="Search" title="Search" />
+          </p>
+        </form>
+      </div>
+        
+        {% block content %}
+     <!-- <div id="content">-->
+        <!-- insert the page content here -->
+        <h1>Cities of the world</h1>
+        <p>		
+		
+            
+            
+               <a href="{{
+   path(
+      'cciudades_city',
+     { 'id': 1 }
+   )
+  }}">
+  First city -> 
+</a>
+      <!-- </div> -->
+        {% endblock %}
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+     
+    </div>
+  </div>
+</body>
+</html>
