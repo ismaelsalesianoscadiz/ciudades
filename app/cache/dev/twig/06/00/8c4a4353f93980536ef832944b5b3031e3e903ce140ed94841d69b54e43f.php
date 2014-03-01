@@ -69,20 +69,15 @@ class __TwigTemplate_06008c4a4353f93980536ef832944b5b3031e3e903ce140ed94841d69b5
       <div class=\"sidebar\">
         <!-- insert your sidebar items here -->
       
-        <h4>Links</h4>
-        
-        <ul>
-          <li><a href=\"#\">link 1</a></li>
-          <li><a href=\"#\">link 2</a></li>
-          <li><a href=\"#\">link 3</a></li>
-          <li><a href=\"#\">link 4</a></li>
-        </ul>
-        <h3>Search</h3>
+       
+        ";
+        // line 56
+        echo "        <h3>Search</h3>
         <form method=\"post\" action=\"#\" id=\"search_form\">
           <p>
             <input class=\"search\" type=\"text\" name=\"search_field\" value=\"Enter city name.....\" />
             <input name=\"search\" type=\"image\" style=\"border: 0; margin: 0 0 -9px 5px;\" src=\"";
-        // line 58
+        // line 60
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/cciudades/css/search.png"), "html", null, true);
         echo "\" alt=\"Search\" title=\"Search\" />
           </p>
@@ -90,9 +85,9 @@ class __TwigTemplate_06008c4a4353f93980536ef832944b5b3031e3e903ce140ed94841d69b5
       </div>
         
         ";
-        // line 63
+        // line 65
         $this->displayBlock('content', $context, $blocks);
-        // line 81
+        // line 83
         echo "    </div>
     <div id=\"content_footer\"></div>
     <div id=\"footer\">
@@ -124,10 +119,10 @@ class __TwigTemplate_06008c4a4353f93980536ef832944b5b3031e3e903ce140ed94841d69b5
 ";
     }
 
-    // line 63
+    // line 65
     public function block_content($context, array $blocks = array())
     {
-        // line 64
+        // line 66
         echo "     <!-- <div id=\"content\">-->
         <!-- insert the page content here -->
         <h1>Cities of the world</h1>
@@ -136,9 +131,9 @@ class __TwigTemplate_06008c4a4353f93980536ef832944b5b3031e3e903ce140ed94841d69b5
             
             
                <a href=\"";
-        // line 71
+        // line 73
         echo $this->env->getExtension('routing')->getPath("cciudades_city", array("id" => 1));
-        // line 76
+        // line 78
         echo "\">
   First city -> 
 </a>
@@ -158,6 +153,6 @@ class __TwigTemplate_06008c4a4353f93980536ef832944b5b3031e3e903ce140ed94841d69b5
 
     public function getDebugInfo()
     {
-        return array (  142 => 76,  140 => 71,  131 => 64,  128 => 63,  117 => 10,  114 => 9,  108 => 5,  96 => 81,  94 => 63,  86 => 58,  62 => 37,  58 => 36,  54 => 35,  40 => 25,  37 => 18,  35 => 9,  30 => 6,  28 => 5,  22 => 1,);
+        return array (  137 => 78,  135 => 73,  126 => 66,  123 => 65,  112 => 10,  109 => 9,  103 => 5,  91 => 83,  89 => 65,  81 => 60,  75 => 56,  62 => 37,  58 => 36,  54 => 35,  40 => 25,  37 => 18,  35 => 9,  30 => 6,  28 => 5,  22 => 1,);
     }
 }

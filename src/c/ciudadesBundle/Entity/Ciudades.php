@@ -17,7 +17,7 @@ class Ciudades
     /**
      * @var string
      */
-    private $ciudad;
+    private $city;
 
     /**
      * @var boolean
@@ -343,9 +343,9 @@ return $country;
      * @param string $ciudad
      * @return Ciudades
      */
-    public function setCiudad($ciudad)
+    public function setCity($ciudad)
     {
-        $this->ciudad = $ciudad;
+        $this->city = $ciudad;
     
         return $this;
     }
@@ -355,9 +355,9 @@ return $country;
      *
      * @return string 
      */
-    public function getCiudad()
+    public function getCity()
     {
-        return $this->ciudad;
+        return $this->city;
     }
 
     /**
