@@ -12,6 +12,7 @@ class __TwigTemplate_bbb43fa3af50cd7e515deec4c1756d56d95ea17d4d7d1418ba0a9392a3c
         $this->blocks = array(
             'meta' => array($this, 'block_meta'),
             'title' => array($this, 'block_title'),
+            'sidebar' => array($this, 'block_sidebar'),
             'content' => array($this, 'block_content'),
         );
     }
@@ -53,53 +54,63 @@ class __TwigTemplate_bbb43fa3af50cd7e515deec4c1756d56d95ea17d4d7d1418ba0a9392a3c
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getCiudad", array(), "method"), "html", null, true);
     }
 
-    // line 21
+    // line 20
+    public function block_sidebar($context, array $blocks = array())
+    {
+        // line 21
+        echo "    ";
+    }
+
+    // line 23
     public function block_content($context, array $blocks = array())
     {
-        // line 22
+        // line 24
         echo "
- 
-    
 <h1>
-      CITY:  <strong>";
+    CITY: <strong> <span class=\"color2\"> ";
         // line 26
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getCiudad", array(), "method"), "html", null, true);
-        echo "</strong>
-</h1>
+        echo "</span>
+        </strong>
+        </h1>
+   
+    
+
        
        
        <h2>
             Country: 
+       
            <strong>  ";
-        // line 32
+        // line 37
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getCountryLong", array(), "method"), "html", null, true);
         echo " </strong>
-                                 
+        
      
           <br>
           </h2>
-
+    <h2>
        Latitude:
        ";
-        // line 39
+        // line 44
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLatitude", array(), "method"), "html", null, true);
         echo "
              <br>
              Longitude:
       ";
-        // line 42
+        // line 47
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLongitude", array(), "method"), "html", null, true);
         echo "
-
+           </h2>
              <br>
              ";
-        // line 45
+        // line 50
         $context["f"] = (((("http://www.openstreetmap.org/?lat=" . $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLatitude", array(), "method")) . "&lon=") . $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLongitude", array(), "method")) . "&zoom=12&layers=B000FTFTT&mlat=14.60921&mlon=121.14232");
-        // line 46
+        // line 51
         echo "
         
         <a target=\"_blank\" href=";
-        // line 48
+        // line 53
         echo twig_escape_filter($this->env, (isset($context["f"]) ? $context["f"] : $this->getContext($context, "f")), "html", null, true);
         echo " 
             
@@ -110,9 +121,9 @@ class __TwigTemplate_bbb43fa3af50cd7e515deec4c1756d56d95ea17d4d7d1418ba0a9392a3c
         <br>
     
 ";
-        // line 56
+        // line 61
         $context["a"] = (((("http://maps.googleapis.com/maps/api/staticmap?center=" . $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLatitude", array(), "method")) . ",") . $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLongitude", array(), "method")) . "&zoom=9&size=400x300&sensor=false");
-        // line 57
+        // line 62
         echo "<img src=";
         echo twig_escape_filter($this->env, (isset($context["a"]) ? $context["a"] : $this->getContext($context, "a")), "html", null, true);
         echo " >
@@ -128,7 +139,7 @@ class __TwigTemplate_bbb43fa3af50cd7e515deec4c1756d56d95ea17d4d7d1418ba0a9392a3c
                   
            
       ";
-        // line 82
+        // line 87
         echo "        
          
   
@@ -137,16 +148,16 @@ class __TwigTemplate_bbb43fa3af50cd7e515deec4c1756d56d95ea17d4d7d1418ba0a9392a3c
         
         
    ";
-        // line 89
+        // line 94
         $context["d"] = (((("http://ojw.dev.openstreetmap.org/StaticMap/?
    lat=" . $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLatitude", array(), "method")) . "&lon=") . $this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getLongitude", array(), "method")) . "&z=9&
    w=480&h=300&mode=Export&show=1");
-        // line 92
+        // line 97
         echo "       
  
         
 <img src=\"";
-        // line 95
+        // line 100
         echo twig_escape_filter($this->env, (isset($context["d"]) ? $context["d"] : $this->getContext($context, "d")), "html", null, true);
         echo "\"     
    width=\"480\" height=\"300\" alt=\"OpenStreetMap\" />
@@ -157,9 +168,9 @@ class __TwigTemplate_bbb43fa3af50cd7e515deec4c1756d56d95ea17d4d7d1418ba0a9392a3c
    
   
            <a href=\"";
-        // line 103
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cciudades_city", array("id" => ($this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getCp", array(), "method") + 1))), "html", null, true);
         // line 108
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("cciudades_city", array("id" => ($this->getAttribute((isset($context["city"]) ? $context["city"] : $this->getContext($context, "city")), "getCp", array(), "method") + 1))), "html", null, true);
+        // line 113
         echo "\">
   Next city -> 
 </a>
@@ -187,6 +198,6 @@ class __TwigTemplate_bbb43fa3af50cd7e515deec4c1756d56d95ea17d4d7d1418ba0a9392a3c
 
     public function getDebugInfo()
     {
-        return array (  163 => 108,  161 => 103,  150 => 95,  145 => 92,  141 => 89,  132 => 82,  116 => 57,  114 => 56,  103 => 48,  99 => 46,  97 => 45,  91 => 42,  85 => 39,  75 => 32,  66 => 26,  60 => 22,  57 => 21,  51 => 19,  44 => 11,  37 => 7,  33 => 5,  30 => 4,);
+        return array (  174 => 113,  172 => 108,  161 => 100,  156 => 97,  152 => 94,  143 => 87,  127 => 62,  125 => 61,  114 => 53,  110 => 51,  108 => 50,  102 => 47,  96 => 44,  86 => 37,  72 => 26,  68 => 24,  65 => 23,  61 => 21,  58 => 20,  52 => 19,  45 => 11,  38 => 7,  34 => 5,  31 => 4,);
     }
 }

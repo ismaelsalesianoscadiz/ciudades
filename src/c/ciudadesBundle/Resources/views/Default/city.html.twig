@@ -17,30 +17,36 @@
 
 
 {% block title city.getCiudad() %}
-
+   {% block sidebar %}
+    {{ parent() }}
+    {% endblock %}
+    
   {% block content %}
 
- 
-    
 <h1>
-      CITY:  <strong>{{  city.getCiudad() }}</strong>
-</h1>
+    CITY: <strong> <span class="color2"> {{  city.getCiudad() }}</span>
+        </strong>
+        </h1>
+   
+    
+
        
        
        <h2>
             Country: 
+       
            <strong>  {{  city.getCountryLong() }} </strong>
-                                 
+        
      
           <br>
           </h2>
-
+    <h2>
        Latitude:
        {{  city.getLatitude() }}
              <br>
              Longitude:
       {{  city.getLongitude() }}
-
+           </h2>
              <br>
              {% set f="http://www.openstreetmap.org/?lat="~city.getLatitude()~"&lon="~city.getLongitude()~"&zoom=12&layers=B000FTFTT&mlat=14.60921&mlon=121.14232"%}
 
