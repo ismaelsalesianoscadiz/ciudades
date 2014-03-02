@@ -130,6 +130,7 @@ $builder = $this->createFormBuilder($defaultData);
     $form->handleRequest($request);
 
       $data = $form->getData();
+      if (strlen ($data['City'])>1){
          
             $em = $this->getDoctrine()->getManager();
             $query = $em->createQuery('SELECT u from cciudadesBundle:Ciudades u WHERE u.country = :name AND'
@@ -150,8 +151,10 @@ $builder = $this->createFormBuilder($defaultData);
              $pais=  $countries[$data['Country']];
 
             return $this->render('cciudadesBundle:Default:pais.html.twig', array('ciudades' => $ciudades, 'co' => 'es', 'pais' => $pais));
-      
+      }
            }//end POST
+           
+            return $this->render('cciudadesBundle:Default:base2.html.twig');
     }
     
     

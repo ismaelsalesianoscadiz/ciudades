@@ -63,7 +63,7 @@ class __TwigTemplate_a6067db69cc11ee6982ee091811be063207b3197c29e52cca2e1cb1ed49
         // line 25
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
-\t\t\t<input type=\"submit\" />
+\t\t\t<input type=\"submit\" value=\"Submit\" />
 \t\t\t</form>
         
   
